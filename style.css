@@ -55,6 +55,9 @@
 	
 	margin: 10px; /*Margins for inner DIV inside each column (to provide padding)*/
 	margin-top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 
@@ -139,22 +142,16 @@ body {
   
   }
 
-  /*.draw{
-     margin: auto;
-    margin: auto;
+  .draw{
+    text-align: center;
    
   }
 
-  .button{
-  
-  margin: auto;
-  margin: auto;
-
-  }*/
+ 
   
     .rotate {
         transform: rotate(180deg);
       }
     .original {
-        transform: rotate(360deg);
+        transform: rotate(0deg);
       }
