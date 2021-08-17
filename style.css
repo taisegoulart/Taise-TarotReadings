@@ -1,6 +1,5 @@
 
 #navbar{
-	
 	width: 100%;
 	top: 0px;
 	position: fixed;
@@ -12,31 +11,25 @@
 	font-size: 12px;
 	line-height: 30px;
 	text-align: center;
-	background-color: #000000;
-	color: pink;
+	background-color: #333333;
+	color: #cfacf0;
 	z-index: 1;
-
 }
 
 #navbar a {
-	
 	margin: 20px 20px;
-	color: #FFFFFF;
+	color:#7cc8e6;
 	text-decoration: none;
-	
 }
 
 #navbar a:hover {
-	
-	color: #EB9605;
-	border-bottom: 2px #DE4126 solid;
-  	transition: all 0.5s ease;
-	
+	color:#cfacf0;
+	border-bottom: 2px #4ebbe6 solid;
+  transition: all 0.5s ease;
 }
 
 
 #maincontainer {
-	
 	background-color: #E8E8E8;
 	opacity: 0.95;
 	font-family: 'PT Sans', sans-serif;
@@ -46,13 +39,10 @@
 	overflow: hidden;
 	width: 840px; /*Width of main container*/
 	margin: 100px auto; /*Center container on page*/
-
-
 }
 
 
 .innertube{
-	
 	margin: 10px; /*Margins for inner DIV inside each column (to provide padding)*/
 	margin-top: 0;
   display: flex;
@@ -60,19 +50,15 @@
   align-items: center;
 }
 
-
 #contentwrapper{
-	
 	float: left;
 	width: 100%
 }
 
 #contentcolumn{
-	
 	margin-top: 10px;
-
-	
 }
+
 @media (max-width: 840px){ /* responsive layout */
 	#maincontainer{
 	width: 100%;
@@ -93,17 +79,16 @@
 	}
 }
 
-
 body {
     margin: 0 auto;
     padding: 0;
     font-family: Georgia;
-    background: purple;
+    background:#fae292;
   }
   
-  h1 {
+h1 {
     text-align: center;
-    color: cadetblue;
+    color: #cfacf0;
   }
   
   .container {
@@ -113,11 +98,9 @@ body {
     min-width: 600px;
     min-height: 400px;
     height: 400px;
-    
-  }
+    }
 
-  button {
-
+button {
     font-family: 'Quicksand', sans-serif;
     text-transform: uppercase;
     background-color: #333333;
@@ -128,10 +111,9 @@ body {
     border-radius: 1px;
     margin-left: -3px;
     margin: bottom: 5px;
-  
   }
 
-  #cardDescription{
+#cardDescription{
   font-family: 'Quicksand', sans-serif;
 	font-weight: bold;
 	text-transform: uppercase;
@@ -139,19 +121,26 @@ body {
 	line-height: 30px;
 	text-align: center;
 	color: #333333;
-  
-  }
+   }
 
   .draw{
     text-align: center;
-   
   }
-
  
-  
-    .rotate {
-        transform: rotate(180deg);
+  .rotate{
+      transform: rotate(180deg);
       }
-    .original {
-        transform: rotate(0deg);
+  .original {
+      transform: rotate(0deg);
       }
+
+a{
+      color:#7cc8e6;
+      text-decoration: none;
+}
+      
+a:hover{
+      color:#cfacf0;
+      border-bottom: 2px #4ebbe6 solid;
+      transition: all 0.5s ease;
+}
