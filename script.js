@@ -1,13 +1,13 @@
-const cards = [{ //decarar assim
+const cards = [{ //creates an object array of Major arcana Tarot cards
     "id": 0,
     "name": "The Fool",
-    "method": "Upright: innocence, new beginnings, free spirit. | Reversed: recklessness, taken advantage of, inconsideration.",
+    "meaning": "Upright: innocence, new beginnings, free spirit. | Reversed: recklessness, taken advantage of, inconsideration.",
     "image": "images/00.png"
   }, 
   {
     "id": 1,
     "name": "The Magician",
-    "method": "Upright: willpower, desire, creation, manifestation. | Reversed: trickery, illusions, out of touch.",
+    "meaning": "Upright: willpower, desire, creation, manifestation. | Reversed: trickery, illusions, out of touch.",
     "image": "images/01.png"
   },
   {
@@ -133,27 +133,40 @@ const cards = [{ //decarar assim
 
 
 
-function pickCard() { 
-    let randomCard = Math.floor(Math.random() * cards.length);
-  for (let i = 0; i < cards.length; i++) {
+function pickCard(index=1) {   //function which picks a random card from the array cards; easily recursive as it is using cards.lenght, so for a future upgrade it could include minor arcana with no problem
+    let randomCard = Math.floor(Math.random() * cards.length); //assume 1 como index ali em cima
+    drawCard( cards[randomCard], index );
+    alert("Your card is " +cards[randomCard].name);
+  /*for (let i = 0; i < cards.length; i++) {            //só precisaria se tivesse que validar o conteudo, não precisa mais
     if ( cards[i].id === randomCard ) {
         alert("Your card is " +cards[i].name)
         drawCard( cards[i] );
     }
+  }*/
+}
+
+function pick3Cards(){
+    for (let i = 1; i < 4; i++) {            //só precisaria se tivesse que validar o conteudo, não precisa mais
+        pickCard(i);
+
+}
+}
+
+
+
+
+function drawCard( draw, index ) {  //draw a card and shows its meanings bellow
+document.getElementById("draw"+index).src = draw.image;
+document.getElementById("cardDescription"+index).innerText = draw.meaning;
+let cardPosition = Math.floor(Math.random() * 2 ); 
+  //console.log( cardPosition );            debug function to analyze why the cards are inverting just one time (it was a CSS error)
+  if ( cardPosition === 0) {
+      document.getElementById("draw"+index).classList.remove("original"); //by removing and adding the css class again we were able to get a reversed or not card accordingly to the random
+      document.getElementById("draw"+index).classList.add("rotate"); 
+  }else{
+    document.getElementById("draw"+index).classList.remove("rotate");
+    document.getElementById("draw"+index).classList.add("original");
   }
 }
 
-function drawCard( draw ) { 
-    document.getElementById("draw").src = draw.image;
-  document.getElementById("cardDescription").innerText = draw.meaning  /*+" - " + draw.name*/;
-  let cardPosition = Math.floor(Math.random()); //usar math.round?
-  if ( cardPosition === 0) {
-      document.getElementById("draw").classList.add("rotate"); //ver porque tá repetindo sempre o zero
-  
-  }else{
-    document.getElementById("draw").classList.add("original");
-      
-  }
-  //tá mudando sempre o mesmo, por quÊ? 
-}
 
